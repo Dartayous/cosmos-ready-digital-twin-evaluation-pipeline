@@ -219,7 +219,7 @@ This system is designed to separate simulation, inference, and evaluation layers
 
 ---
 
-## 🧠 Author
+## Author
 
 Dartayous Hunter - Digital Twin Engineer (NVIDIA-focused)
 
