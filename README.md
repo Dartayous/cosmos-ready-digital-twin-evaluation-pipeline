@@ -160,3 +160,47 @@ Each run produces structured outputs:
 - `reports/evaluation_report.md`
 
 ---
+
+---
+
+## Tools & Technologies
+
+### Core Technologies
+
+- Python
+- OpenUSD (Universal Scene Description)
+- NVIDIA Isaac Sim
+
+---
+
+### Data & Pipeline
+
+- JSON-based structured data (telemetry, manifests, requests, responses)
+- Scenario-based evaluation pipelines
+- File-based run artifact system
+
+---
+
+### AI Integration Layer
+
+- NVIDIA Cosmos (integration-ready architecture)
+- Simulated Cosmos Predict outputs (no public API access)
+- Mock Cosmos Reason execution layer
+
+---
+
+### Engineering Focus
+
+- Perception robustness evaluation
+- Scenario-based testing (blur, noise, lighting, occlusion)
+- Confidence and risk scoring
+- Decision routing (review vs automated action)
+- Production-style pipeline architecture
+
+---
+
+## 🧠 Author
+
+Dartayous Hunter - Digital Twin Engineer (NVIDIA-focused)
+
+---
