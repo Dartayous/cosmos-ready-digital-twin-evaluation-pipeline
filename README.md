@@ -11,7 +11,7 @@ It demonstrates how simulation data can be structured, evaluated, and transforme
 The goal is NOT to fake Cosmos access.
 
 The goal is to prove:
-- understanding of the real pipeline needed for COSMOS Predict and Reason
+- I understand the actual pipeline needed for COSMOS Predict and Reason
 - I could build it correctly
 - I could create a structure this is ready to plug into Cosmos the moment it becomes available
 
