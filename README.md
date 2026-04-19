@@ -1,6 +1,7 @@
 # Cosmos-Ready Digital Twin Evaluation Pipeline
-> A production-style digital twin evaluation pipeline designed for Cosmos-era physical AI systems.
 
+> A production-style digital twin evaluation pipeline designed for Cosmos-era physical AI systems.
+---
 ## Overview
 
 This project implements a production-style digital twin evaluation pipeline using Isaac Sim-style data capture and a Cosmos-ready AI integration architecture.
