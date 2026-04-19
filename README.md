@@ -100,6 +100,32 @@ These runs simulate degraded perception conditions that would normally be handle
 
 ---
 
+## Visual Results
+
+### Blur Scenario
+![Blur Scenario](images/predict_blur.png)
+
+---
+
+### Dim Lighting Scenario
+![Dim Lighting](images/predict_dim.png)
+
+---
+
+### Noise Scenario
+![Noise Scenario](images/predict_noise.png)
+
+---
+
+### Occlusion Scenario
+![Occlusion Scenario](images/predict_occlusion.png)
+
+---
+
+### Comparison Output
+![Comparison Output](images/comparison_output.png)
+
+
 ## Results
 
 ### Comparison Output
@@ -112,6 +138,8 @@ run_0004_predict_occlusion    | conf: 0.61 | risk: medium | REVIEW | send_to_rev
 ```
 
 ---
+
+
 
 ### Interpretation
 
@@ -138,19 +166,3 @@ Each run produces structured outputs:
 - `reports/evaluation_report.md`
 
 ---
-
-## Suggested Visual Additions
-
-For your README, add:
-
-- blur scenario screenshot
-- dim lighting scenario screenshot
-- noise scenario screenshot
-- occlusion scenario screenshot
-- comparison output screenshot
-
-Also include:
-
-- `run_0004_predict_comparison.txt`
-- sample `cosmos_response.json`
-- sample `evaluation_report.md`

@@ -1,6 +1,8 @@
 # Run Comparison Report
 
-run_0004_predict_blur     | conf: 0.61 | risk: medium | REVIEW   | send_to_review_queue
-run_0004_predict_dim_lighting | conf: 0.71 | risk: medium | REVIEW   | send_to_review_queue
-run_0004_predict_noise    | conf: 0.61 | risk: medium | REVIEW   | send_to_review_queue
-run_0004_predict_occlusion | conf: 0.61 | risk: medium | REVIEW   | send_to_review_queue
+RUN                             CONF            RISK            ACTION 
+-----------------------------------------------------------------------------------------
+run_0004_predict_blur           | conf: 0.61    | risk: medium  | REVIEW   
+run_0004_predict_dim_lighting   | conf: 0.71    | risk: medium  | REVIEW   
+run_0004_predict_noise          | conf: 0.61    | risk: medium  | REVIEW   
+run_0004_predict_occlusion      | conf: 0.61    | risk: medium  | REVIEW   
