@@ -1,8 +1,11 @@
-# Project 08 — Cosmos-Ready Digital Twin Evaluation Pipeline
+# Cosmos-Ready Digital Twin Evaluation Pipeline
+> A production-style digital twin evaluation pipeline designed for Cosmos-era physical AI systems.
 
 ## Overview
 
-This project demonstrates a digital twin evaluation pipeline built around Isaac Sim-style data capture, structured run artifacts, and a Cosmos-ready architecture.
+This project implements a production-style digital twin evaluation pipeline using Isaac Sim-style data capture and a Cosmos-ready AI integration architecture.
+
+It demonstrates how simulation data can be structured, evaluated, and transformed into decision-ready outputs under varying real-world conditions.
 
 The goal is NOT to fake Cosmos access.
 
@@ -11,6 +14,14 @@ The goal is to prove:
 - you built it correctly
 - you are ready to plug into Cosmos the moment it becomes available
 
+## What This Project Demonstrates
+
+- End-to-end digital twin evaluation pipeline design
+- Simulation → AI → decision workflow integration
+- Scenario-based perception robustness testing
+- Production-style data structuring and artifact management
+- Cosmos-ready architecture without relying on unavailable APIs
+  
 ---
 
 ## Why This Project Matters
@@ -194,6 +205,12 @@ Each run produces structured outputs:
 - Confidence and risk scoring
 - Decision routing (review vs automated action)
 - Production-style pipeline architecture
+
+---
+
+## Engineering Note
+
+This system is designed to separate simulation, inference, and evaluation layers — allowing real AI models (such as Cosmos Predict and Reason) to be integrated without changing the surrounding pipeline.
 
 ---
 
