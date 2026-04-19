@@ -1,0 +1,1249 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (5, 0, 0)
+                double radius = 5
+            }
+            dictionary Perspective = {
+                double3 position = (26.773972353404737, 16.650400621494356, 14.668014435118309)
+                double3 target = (19.245667019982385, 7.847875777263031, -0.08992718152790857)
+            }
+            dictionary Right = {
+                double3 position = (0, -5, 0)
+                double radius = 5
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 5)
+                double radius = 5
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary navmeshSettings = {
+            double agentHeight = 1.8
+            double agentMaxFloorSlope = 45
+            double agentMaxStepHeight = 0.4
+            double agentRadius = 0.2
+            dictionary areas = {
+                dictionary "0" = {
+                    string areaName = "Walkable"
+                    float3 color = (0.2, 0.8, 1)
+                    double defaultCost = 1
+                }
+            }
+            bool excludeInteractiveObjects = 1
+            bool excludeRigidBodies = 1
+            int ver = 1
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./warehouse_runtime_p08_v01.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+            float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
+            float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
+            float3 "rtx:index:backgroundColor" = (0, 0, 0)
+            float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
+            float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
+            float3 "rtx:post:backgroundZeroAlpha:backgroundDefaultColor" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gain" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:offset" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:saturation" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:blackpoint" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gain" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:lift" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:multiply" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:offset" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:whitepoint" = (1, 1, 1)
+            float3 "rtx:post:lensDistortion:lensFocalLengthArray" = (10, 30, 50)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffX" = (450, 475, 500)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffY" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:cutoffPoint" = (2, 2, 2)
+            float3 "rtx:post:lensFlares:haloFlareFalloff" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:haloFlareRadius" = (75, 75, 75)
+            float3 "rtx:post:lensFlares:isotropicFlareFalloff" = (50, 50, 50)
+            float3 "rtx:post:lensFlares:spectralBlurWavelengthRange" = (380, 550, 770)
+            float3 "rtx:post:tonemap:whitepoint" = (1, 1, 1)
+            float3 "rtx:raytracing:indexdirect:svoBrickSize" = (32, 32, 32)
+            float3 "rtx:raytracing:inscattering:singleScatteringAlbedo" = (0.9, 0.9, 0.9)
+            float3 "rtx:raytracing:inscattering:transmittanceColor" = (0.5, 0.5, 0.5)
+            float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
+            float2 "rtx:viewTile:resolution" = (0, 0)
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 1000000
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @../../project_03a_robot_eyes_with_Isaac_Sim/usd/robot_control_override.usda@
+    ]
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "EnvWrapper"
+    {
+        token visibility = "inherited"
+        quatd xformOp:orient = (0.7071067811865476, 0.7071067811865475, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "EnvironmentRoot" (
+            references = @../../../project_03_interactive_robotics_twin/usd/warehouse_robotics_v01.usda@
+        )
+        {
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            over "Objects"
+            {
+                over "Boxes"
+                {
+                    over "Movable"
+                    {
+                        over "Xform"
+                        {
+                        }
+
+                        over "Xform_01"
+                        {
+                        }
+
+                        over "Xform_02"
+                        {
+                        }
+
+                        over "Xform_03"
+                        {
+                        }
+
+                        over "Xform_04"
+                        {
+                        }
+
+                        over "Xform_05"
+                        {
+                        }
+
+                        over "Xform_06"
+                        {
+                        }
+
+                        over "Xform_07"
+                        {
+                            double3 xformOp:rotateXYZ = (0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (21.668185782389067, -0.1381499673656173, -8.241298254891525)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        over "Xform_08"
+                        {
+                        }
+
+                        over "Xform_09"
+                        {
+                        }
+
+                        over "Xform_10"
+                        {
+                        }
+
+                        over "Xform_11"
+                        {
+                        }
+
+                        over "Xform_12"
+                        {
+                        }
+
+                        over "Xform_13"
+                        {
+                        }
+
+                        over "Xform_14"
+                        {
+                        }
+
+                        over "Xform_15"
+                        {
+                        }
+
+                        over "Xform_16"
+                        {
+                        }
+
+                        over "Xform_17"
+                        {
+                        }
+
+                        over "Xform_18"
+                        {
+                        }
+
+                        over "Xform_19"
+                        {
+                        }
+
+                        over "Xform_20"
+                        {
+                        }
+
+                        over "Xform_21"
+                        {
+                        }
+
+                        over "Xform_22"
+                        {
+                        }
+
+                        over "Xform_23"
+                        {
+                        }
+
+                        over "Xform_24"
+                        {
+                        }
+                    }
+                }
+
+                over "Tables"
+                {
+                    over "Conference_Table" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </World/EnvWrapper/EnvironmentRoot/Objects/Tables/Conference_Table/Walnut_Planks> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double3 xformOp:translate = (0, 0, 0)
+
+                        def Material "Walnut_Planks"
+                        {
+                            token outputs:mdl:displacement.connect = </World/EnvWrapper/EnvironmentRoot/Objects/Tables/Conference_Table/Walnut_Planks/Shader.outputs:out>
+                            token outputs:mdl:surface.connect = </World/EnvWrapper/EnvironmentRoot/Objects/Tables/Conference_Table/Walnut_Planks/Shader.outputs:out>
+                            token outputs:mdl:volume.connect = </World/EnvWrapper/EnvironmentRoot/Objects/Tables/Conference_Table/Walnut_Planks/Shader.outputs:out>
+
+                            def Shader "Shader"
+                            {
+                                uniform token info:implementationSource = "sourceAsset"
+                                uniform asset info:mdl:sourceAsset = @https://omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_2_1/Base/Wood/Walnut_Planks.mdl@
+                                uniform token info:mdl:sourceAsset:subIdentifier = "Walnut_Planks"
+                                token outputs:out (
+                                    renderType = "material"
+                                )
+                            }
+                        }
+
+                        over "Cylinder"
+                        {
+                            double3 xformOp:scale = (9.5, 0.05, 1.700000025331974)
+                        }
+                    }
+
+                    over "Office_Table"
+                    {
+                        over "Cube"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Cube_01"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Cube_02"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Cube_03"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        def Xform "Xform" (
+                            instanceable = true
+                            references = @../../../assets/Desks/Desk_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 180, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-9.52041674679414, 3.5358436624510555e-15, -15.924024200654904)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_01" (
+                            instanceable = true
+                            references = @../../../assets/Desks/Desk_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (10.074171923032615, -3.12092539089195e-15, 14.055398427472106)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_02" (
+                            references = @../../../assets/Desks/Desk_COLOR_B_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 90, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (10.676698079517404, -4.511893735054962e-15, 20.3197629439288)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+                    }
+
+                    over "Chairs"
+                    {
+                        over "Chair_1"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_02"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_03"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_04"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_05"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_06"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_07"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_08"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_09"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_10"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_11"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_12"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_13"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_14"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Chair_15"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        def Xform "Xform" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (9.984983601886583, -3.200590256734495e-15, 14.414177087595112)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_01" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 180, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-9.596397557806451, 3.625604423891499e-15, -16.32827073243058)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_02" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 76.40000113844872, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (10.707342674757118, -4.448552429894021e-15, 20.034499065608475)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_03" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -3.200000047683716, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-0.0980925281045385, 0.06993655538509394, 19.623671930837066)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_04" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 3.6000000536441803, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (1.3036703813888504, 0.06993655538509054, 19.557843681404698)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_05" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -8.50000012665987, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-1.5860690247950495, 0.06993655538508863, 19.557843681404698)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_06" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -13.300000198185444, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-3.0904989656868986, 0.06993655538508864, 19.322224894662362)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_07" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, 9.200000137090683, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (2.8913644135914733, 0.06993655538508815, 19.414307922136423)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_08" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -181.00000269711018, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-0.09809252810454305, 0.06993655538509358, 18.750446512343228)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_09" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -179.9000026807189, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (1.3036703813888453, 0.06993655538509025, 18.837968958660095)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_10" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -178.6000026613474, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-1.5860690247950537, 0.06993655538509119, 18.826873702667505)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_11" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -166.50000248104334, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (-3.0904989656868906, 0.06993655538508937, 19.040941748116314)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+
+                        def Xform "Xform_12" (
+                            instanceable = true
+                            references = @../../../assets/Chairs/Chair_COLOR_A_M.usda@
+                        )
+                        {
+                            double3 xformOp:rotateXYZ = (0, -189.50000282377005, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (2.8913644135914103, 0.06993655538508842, 18.993143128184407)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                        }
+                    }
+                }
+
+                over "WALLS"
+                {
+                    over "Exterior_Walls" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Exterior_Walls/Metal_Cast_Painted_Petrol> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+
+                        def Material "Metal_Cast_Painted_Petrol"
+                        {
+                            token outputs:mdl:displacement.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Exterior_Walls/Metal_Cast_Painted_Petrol/Shader.outputs:out>
+                            token outputs:mdl:surface.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Exterior_Walls/Metal_Cast_Painted_Petrol/Shader.outputs:out>
+                            token outputs:mdl:volume.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Exterior_Walls/Metal_Cast_Painted_Petrol/Shader.outputs:out>
+
+                            def Shader "Shader"
+                            {
+                                uniform token info:implementationSource = "sourceAsset"
+                                uniform asset info:mdl:sourceAsset = @https://omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/Metal_Cast.mdl@
+                                uniform token info:mdl:sourceAsset:subIdentifier = "Metal_Cast_Painted_Petrol"
+                                color3f inputs:metal_tint = (0.0484191, 0.05327067, 0.05405408)
+                                token outputs:out (
+                                    renderType = "material"
+                                )
+                            }
+                        }
+                    }
+
+                    over "Interior_Walls" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Interior_Walls/Metal_Cast_Painted_Antique_White> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+
+                        def Material "Metal_Cast_Painted_Antique_White"
+                        {
+                            token outputs:mdl:displacement.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Interior_Walls/Metal_Cast_Painted_Antique_White/Shader.outputs:out>
+                            token outputs:mdl:surface.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Interior_Walls/Metal_Cast_Painted_Antique_White/Shader.outputs:out>
+                            token outputs:mdl:volume.connect = </World/EnvWrapper/EnvironmentRoot/Objects/WALLS/Interior_Walls/Metal_Cast_Painted_Antique_White/Shader.outputs:out>
+
+                            def Shader "Shader"
+                            {
+                                uniform token info:implementationSource = "sourceAsset"
+                                uniform asset info:mdl:sourceAsset = @https://omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/vMaterials_2/Metal/Metal_Cast.mdl@
+                                uniform token info:mdl:sourceAsset:subIdentifier = "Metal_Cast_Painted_Antique_White"
+                                token outputs:out (
+                                    renderType = "material"
+                                )
+                            }
+                        }
+
+                        over "Cube_04_CF_02"
+                        {
+                            token visibility = "invisible"
+                        }
+
+                        over "Cube_04_CF_03"
+                        {
+                            token visibility = "invisible"
+                        }
+                    }
+                }
+
+                def Xform "Computer_Monitor"
+                {
+                    double3 xformOp:rotateXYZ = (0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                    def Xform "Xform" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 206.90000308305025, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-8.86943780446117, 0.7675446645999422, -16.06525206736987)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_01" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 158.2000023573637, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-10.208006325072748, 0.7675446645999424, -16.02961120497254)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_02" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 180, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-9.530819951227853, 0.7675446645999424, -15.90086986888172)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_03" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, -28.500000424683094, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (10.745330778889311, 0.7675446645999425, 14.10497961926441)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_04" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 31.900000475347042, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (9.406762258277796, 0.7675446645999157, 14.154328092690207)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_05" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (10.08394863212263, 0.7675446645999358, 13.935845808167354)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_06" (
+                        instanceable = true
+                        references = @../../../assets/Monitors/Monitor_COLOR_C_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 90, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (10.536777929891546, 0.7675446645999343, 20.301014535793897)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "Wall_Monitor"
+                {
+                    double3 xformOp:rotateXYZ = (0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                    def Xform "Xform" (
+                        references = @../../../assets/Monitors/Monitor_Wall_COLOR_D_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 0, 0)
+                        double3 xformOp:scale = (2, 2, 1)
+                        double3 xformOp:translate = (1.766834560300088, 1.3, 16.237096991529583)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_01" (
+                        references = @../../../assets/Monitors/Monitor_Wall_COLOR_E_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 0, 0)
+                        double3 xformOp:scale = (2, 2, 1)
+                        double3 xformOp:translate = (-1.8214553329965577, 1.3, 16.234827897406618)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_02" (
+                        references = @../../../assets/Monitors/Monitor_Wall_COLOR_D_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, 90, 0)
+                        double3 xformOp:scale = (1.5, 1.8, 1)
+                        double3 xformOp:translate = (-12.175308105117278, 1.3000000000000065, -14.799423599881056)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+
+                    def Xform "Xform_03" (
+                        references = @../../../assets/Monitors/Monitor_Wall_COLOR_E_M.usda@
+                    )
+                    {
+                        double3 xformOp:rotateXYZ = (0, -90, 0)
+                        double3 xformOp:scale = (1.5, 1.8000000268220901, 1)
+                        double3 xformOp:translate = (12.186183776864256, 1.2999999999999996, 13.239447037290164)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+                }
+            }
+
+            over "PATH"
+            {
+                over "END"
+                {
+                    double3 xformOp:translate = (-6.500496967028911, 0.01702786469756759, 18.272375117825188)
+                }
+
+                over "END_TARGET"
+                {
+                    double3 xformOp:rotateXYZ = (0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-6.5005, 0.04053, 18.27238)
+                    double3 xformOp:translate:pivot = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "xformOp:scale", "!invert!xformOp:translate:pivot"]
+
+                    over "END"
+                    {
+                        double3 xformOp:rotateXYZ = (0, 0, 0)
+                        double3 xformOp:scale = (1, 0.02, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+                }
+
+                over "START_TARGET"
+                {
+                    double3 xformOp:rotateXYZ = (0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (25.85101, 0.040527869211006165, -7.19076)
+                    double3 xformOp:translate:pivot = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "xformOp:scale", "!invert!xformOp:translate:pivot"]
+
+                    over "START"
+                    {
+                        double3 xformOp:translate = (0, 0, 0)
+                    }
+                }
+            }
+        }
+    }
+
+    def PhysicsScene "PhysicsScene"
+    {
+    }
+
+    def Xform "GroundPlane"
+    {
+        token visibility = "inherited"
+        quatf xformOp:orient = (1, 0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (5.140397920899806, -0.25627326227676406, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Mesh "CollisionMesh"
+        {
+            uniform bool doubleSided = 0
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            normal3f[] normals = [(0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
+            point3f[] points = [(-25, -25, 0), (25, -25, 0), (25, 25, 0), (-25, 25, 0)]
+            color3f[] primvars:displayColor = [(0.5, 0.5, 0.5)]
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+                interpolation = "varying"
+            )
+        }
+
+        def Plane "CollisionPlane" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            uniform token purpose = "guide"
+        }
+    }
+
+    def Xform "Lighting"
+    {
+        token visibility = "inherited"
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Xform "DomeLight_01"
+        {
+            token visibility = "inherited"
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def DomeLight "DomeLight" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float inputs:colorTemperature = 6500
+                float inputs:exposure = 0
+                float inputs:intensity = 500
+                float inputs:shaping:cone:angle = 180
+                float inputs:shaping:cone:softness
+                float inputs:shaping:focus
+                color3f inputs:shaping:focusTint
+                asset inputs:shaping:ies:file
+                token inputs:texture:format = "latlong"
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+
+        def Xform "KeyLight"
+        {
+            token visibility = "inherited"
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+            def DistantLight "DistantLight" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float inputs:angle = 5
+                float inputs:intensity = 200
+                float inputs:shaping:cone:angle = 180
+                float inputs:shaping:cone:softness
+                float inputs:shaping:focus
+                color3f inputs:shaping:focusTint
+                asset inputs:shaping:ies:file
+                quatd xformOp:orient = (0.7071067811865476, -5.551115123125783e-17, 0.5, 0.49999999999999983)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Xform "FLOOR" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </World/FLOOR/Marble> (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        token visibility = "inherited"
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Mesh "FloorMesh" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysxCollisionAPI", "PhysxTriangleMeshCollisionAPI", "PhysicsMeshCollisionAPI", "NavMeshAreaAPI"]
+        )
+        {
+            float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 3, 2, 4, 6, 7, 5, 6, 2, 3, 7, 4, 5, 1, 0, 4, 0, 2, 6, 5, 7, 3, 1]
+            string nav:area = "Walkable"
+            normal3f[] normals = [(0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0)] (
+                interpolation = "faceVarying"
+            )
+            uniform token physics:approximation = "boundingCube"
+            bool physics:collisionEnabled = 1
+            point3f[] points = [(-0.5, -0.5, 0.5), (0.5, -0.5, 0.5), (-0.5, 0.5, 0.5), (0.5, 0.5, 0.5), (-0.5, -0.5, -0.5), (0.5, -0.5, -0.5), (-0.5, 0.5, -0.5), (0.5, 0.5, -0.5)]
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (1, 1), (0, 1), (0, 0), (0, 1), (0, 0), (1, 0), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (1, 1), (0, 1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            uniform token subdivisionScheme = "none"
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (50, 50, 0.1)
+            double3 xformOp:translate = (5.087475362344904, -0.3606934567857243, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Material "Marble"
+        {
+            token outputs:mdl:displacement.connect = </World/FLOOR/Marble/Shader.outputs:out>
+            token outputs:mdl:surface.connect = </World/FLOOR/Marble/Shader.outputs:out>
+            token outputs:mdl:volume.connect = </World/FLOOR/Marble/Shader.outputs:out>
+
+            def Shader "Shader"
+            {
+                uniform token info:implementationSource = "sourceAsset"
+                uniform asset info:mdl:sourceAsset = @https://omniverse-content-production.s3.us-west-2.amazonaws.com/Materials/2023_2_1/Base/Stone/Marble.mdl@
+                uniform token info:mdl:sourceAsset:subIdentifier = "Marble"
+                color3f inputs:diffuse_tint = (0.76061773, 0.75180745, 0.75180745)
+                token outputs:out (
+                    renderType = "material"
+                )
+            }
+        }
+    }
+
+    def Xform "Targets"
+    {
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "nova_carter_drive_to_goal" (
+        prepend payload = @http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.2/Isaac/Samples/OmniGraph/nova_carter_drive_to_goal.usd@
+    )
+    {
+        quatd xformOp:orient = (6.123234262925839e-17, 0, 0, 1)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (25.632314682006836, 7.247206211090088, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "ActionGraph"
+        {
+            over "make_array"
+            {
+                custom token inputs:input0
+                delete token inputs:input0.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_token.inputs:value>
+                prepend token inputs:input0.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_token.inputs:value>
+                custom token inputs:input1
+                delete token inputs:input1.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_token_01.inputs:value>
+                prepend token inputs:input1.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_token_01.inputs:value>
+            }
+
+            over "RIGHT_select_if_03"
+            {
+                custom token inputs:ifTrue
+                delete token inputs:ifTrue.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_float_04.inputs:value>
+                prepend token inputs:ifTrue.connect = </World/nova_carter_drive_to_goal/ActionGraph/constant_float_03.inputs:value>
+            }
+
+            over "write_prim_attribute"
+            {
+                custom token inputs:layerIdentifier
+                int node:typeVersion = 2
+                custom token state:layerIdentifier
+                custom token state:resolvedLayerIdentifier
+            }
+        }
+
+        over "chassis_link"
+        {
+            def Lidar "RangeLidar"
+            {
+                bool drawLines = 1
+                bool drawPoints = 0
+                bool enabled = 1
+                bool enableSemantics = 0
+                bool highLod = 0
+                float horizontalFov = 360
+                float horizontalResolution = 0.4
+                float maxRange = 20
+                float minRange = 0.4
+                float rotationRate = 0
+                float verticalFov = 30
+                float verticalResolution = 4
+                double3 xformOp:rotateXYZ
+                double3 xformOp:translate = (0, 0, 0.05)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ"]
+                float yawOffset = 0
+            }
+        }
+
+        over "caster_frame_base"
+        {
+        }
+
+        over "caster_swivel_left"
+        {
+        }
+
+        over "caster_wheel_left"
+        {
+        }
+
+        over "caster_swivel_right"
+        {
+        }
+
+        over "caster_wheel_right"
+        {
+        }
+
+        over "wheel_left"
+        {
+        }
+
+        over "wheel_right"
+        {
+        }
+
+        over "dummy_link"
+        {
+        }
+
+        over "dummy_link_2"
+        {
+        }
+
+        over "targetXform"
+        {
+            quatd xformOp:orient = (0.998134798421867, 0, 0, 0.061048539534855936)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-18.73236846923828, -13.795832633972168, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+}
+
+def Xform "Environment"
+{
+    token visibility = "inherited"
+    quatd xformOp:orient = (1, 0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+    def DistantLight "defaultLight" (
+        prepend apiSchemas = ["ShapingAPI"]
+    )
+    {
+        float inputs:angle = 1
+        color3f inputs:color = (0.82625484, 0.74940544, 0.64441496)
+        float inputs:intensity = 1000
+        float inputs:shaping:cone:angle = 180
+        float inputs:shaping:cone:softness
+        float inputs:shaping:focus
+        color3f inputs:shaping:focusTint
+        asset inputs:shaping:ies:file
+        token visibility = "inherited"
+        quatd xformOp:orient = (-0.9238795325112867, 0.3826834323650899, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+}
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 1
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                float omni:rtx:pt:fireflyFilter:maxPerEmissiveUnexposedIntensity = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSample = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse = 3199.9995
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                float omni:rtx:rt:directLighting:maxRayUnexposedIntensity = 6399.999
+                float omni:rtx:rt:indirectdiffuse:maxRayUnexposedIntensity = 6399.999
+                float omni:rtx:rt:inscattering:maxRTSampleUnexposedIntensity = 204799.97
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                float omni:rtx:rt:refractions:maxRayUnexposedIntensity = 19199.998
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1758, 1122)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars"
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+        }
+    }
+}
+
+over "OmniverseKit_Persp" (
+    prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float focalLength = 18.147562
+    float focusDistance = 400
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -18.76050813775798)
+    float3 xformOp:rotateXYZ = (8.948659, -6.536993e-13, -633.43713)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (17.09607382835919, -7.02984037442121, 72.71949443671356)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Front" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (90, -1.2722219e-14, 90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (5, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Right" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (90, -1.41245e-30, 1.2722219e-14)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, -5, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Top" (
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float horizontalAperture = 50
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -5)
+    token projection = "orthographic"
+    float verticalAperture = 50
+    float3 xformOp:rotateXYZ = (-1.2722219e-14, -7.016709e-15, -90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 5)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+

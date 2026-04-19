@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+Thumbs.db
+
+# Large runtime data (DO NOT push)
+runs/*/frames/
+runs/*/video/
+runs/*/telemetry/
+runs/*/responses/
+runs/*/decisions/
+runs/*/reports/
+
+# Keep structure but not heavy data
+!runs/README.md
+
+.thumbs/

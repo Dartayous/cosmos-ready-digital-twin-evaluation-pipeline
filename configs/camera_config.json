@@ -1,0 +1,16 @@
+{
+  "camera_setups": [
+    {
+      "camera_id": "front_eval_cam",
+      "prim_path": "/World/front_eval_cam",
+      "resolution": [1280, 720],
+      "modality": "rgb"
+    },
+    {
+      "camera_id": "robot_rgb_cam",
+      "prim_path": "/World/nova_carter_drive_to_goal/camera_frame_base",
+      "resolution": [1280, 720],
+      "modality": "rgb"
+    }
+  ]
+}

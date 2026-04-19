@@ -1,0 +1,30 @@
+{
+  "project": "project_08_cosmos_integration_demo",
+  "version": "v01",
+  "scenarios": [
+    {
+      "scenario_id": "baseline_clear",
+      "description": "Default warehouse scene. Box fully visible in front of Carter.",
+      "usd_file": "usd/working/warehouse_runtime_p08_v01.usda",
+      "lighting_profile": "default",
+      "obstacle_id": "center_box",
+      "expected_visibility": "high"
+    },
+    {
+      "scenario_id": "dim_lighting",
+      "description": "Reduced lighting to test perception degradation.",
+      "usd_file": "usd/working/warehouse_runtime_p08_variant_dim.usda",
+      "lighting_profile": "dim",
+      "obstacle_id": "center_box",
+      "expected_visibility": "medium"
+    },
+    {
+      "scenario_id": "partial_occlusion",
+      "description": "Obstacle partially occluded by additional geometry.",
+      "usd_file": "usd/working/warehouse_runtime_p08_variant_occluded.usda",
+      "lighting_profile": "default",
+      "obstacle_id": "center_box",
+      "expected_visibility": "medium"
+    }
+  ]
+}

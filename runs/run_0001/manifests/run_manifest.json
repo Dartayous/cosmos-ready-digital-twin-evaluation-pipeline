@@ -1,0 +1,14 @@
+{
+  "run_id": "run_0001",
+  "timestamp_utc": "2026-04-16T17:00:00Z",
+  "project": "project_08_cosmos_integration_demo",
+  "scenario_id": "bright_box_clear",
+  "usd_file": "usd/working/warehouse_runtime_p08_variant_bright.usda",
+  "source_project": "project_03_interactive_robotics_twin",
+  "capture_mode": "offline_replay",
+  "sensor_outputs": [
+    "rgb_frames",
+    "telemetry_json"
+  ],
+  "status": "completed"
+}

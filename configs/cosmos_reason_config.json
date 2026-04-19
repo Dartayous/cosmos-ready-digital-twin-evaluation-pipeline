@@ -1,0 +1,8 @@
+{
+  "mode": "mock",
+  "endpoint_url": "https://fake-cosmos-endpoint.local/api",
+  "api_key_env_var": "COSMOS_API_KEY",
+  "model_name": "cosmos-reason2",
+  "max_images": 3,
+  "timeout_seconds": 60
+}

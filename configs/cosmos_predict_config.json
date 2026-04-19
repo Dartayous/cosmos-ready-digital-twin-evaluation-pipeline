@@ -1,0 +1,9 @@
+{
+  "mode": "real_predict",
+  "endpoint_url": "https://YOUR_COSMOS_PREDICT_ENDPOINT_HERE",
+  "api_key_env_var": "COSMOS_API_KEY",
+  "model_name": "cosmos-predict1-5b",
+  "timeout_seconds": 120,
+  "max_images": 1,
+  "prompt_text": "A warehouse robot approaches a box obstacle in an indoor warehouse. Keep the scene physically plausible, preserve the warehouse layout, and generate a short future-world continuation useful for obstacle perception evaluation."
+}

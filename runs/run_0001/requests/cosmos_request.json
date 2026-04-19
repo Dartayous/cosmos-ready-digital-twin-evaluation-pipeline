@@ -1,0 +1,24 @@
+{
+  "run_id": "run_0001",
+  "scenario_id": "bright_box_clear",
+  "task_type": "obstacle_visibility_evaluation",
+  "inputs": {
+    "image_sequence": [
+      "runs/run_0001/frames/frame_0000.png",
+      "runs/run_0001/frames/frame_0001.png",
+      "runs/run_0001/frames/frame_0002.png"
+    ],
+    "telemetry_file": "runs/run_0001/telemetry/telemetry.json",
+    "scene_context": {
+      "environment": "warehouse",
+      "robot": "nova_carter_drive_to_goal",
+      "obstacle_label": "box"
+    }
+  },
+  "questions": [
+    "Is the box obstacle visually detectable in this sequence?",
+    "How confident are you that the obstacle remains visible enough for perception?",
+    "What environmental factors most affect visibility?"
+  ],
+  "required_output_schema": "cosmos_response_v01"
+}

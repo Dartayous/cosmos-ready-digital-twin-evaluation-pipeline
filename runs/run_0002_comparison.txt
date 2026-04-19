@@ -1,0 +1,7 @@
+# Run Comparison Report
+
+run_0002                  | conf: 0.92 | risk: low    | APPROVED | include_in_training_set
+run_0002_blur             | conf: 0.50 | risk: medium | REVIEW   | send_to_review_queue
+run_0002_dim_lighting     | conf: 0.63 | risk: medium | REVIEW   | send_to_review_queue
+run_0002_noise            | conf: 0.50 | risk: medium | REVIEW   | send_to_review_queue
+run_0002_occlusion        | conf: 0.50 | risk: medium | REVIEW   | send_to_review_queue

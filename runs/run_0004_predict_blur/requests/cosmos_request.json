@@ -1,0 +1,26 @@
+{
+  "run_id": "run_0004_predict_blur",
+  "scenario_id": "blur",
+  "task_type": "obstacle_visibility_evaluation",
+  "inputs": {
+    "image_sequence": [
+      "runs/run_0004_predict_blur/frames/frame_0000.png",
+      "runs/run_0004_predict_blur/frames/frame_0001.png",
+      "runs/run_0004_predict_blur/frames/frame_0002.png"
+    ],
+    "telemetry_file": "telemetry/telemetry.json",
+    "scene_context": {
+      "environment": "warehouse",
+      "robot": "nova_carter_drive_to_goal",
+      "obstacle_label": "box",
+      "sensor_baseline": "lidar_detects_obstacle"
+    }
+  },
+  "questions": [
+    "Is the box obstacle visually detectable in this sequence?",
+    "How confident are you that the obstacle remains visible enough for perception or training use?",
+    "What environmental factors most affect visibility in this run?",
+    "Would you retain this run for obstacle avoidance or perception training?"
+  ],
+  "required_output_schema": "cosmos_response_v01"
+}

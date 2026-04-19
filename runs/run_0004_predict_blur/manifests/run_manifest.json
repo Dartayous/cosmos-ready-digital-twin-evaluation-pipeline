@@ -1,0 +1,21 @@
+{
+  "run_id": "run_0004_predict_blur",
+  "timestamp_utc": "2026-04-18T17:24:20.410097+00:00",
+  "project": "project_08_cosmos_integration_demo",
+  "scenario_id": "blur",
+  "usd_file": "usd/working/warehouse_runtime_p08_v01.usda",
+  "source_project": "project_08_isaac_capture_bridge",
+  "capture_mode": "isaac_import",
+  "source_capture_dir": "images",
+  "sensor_outputs": [
+    "rgb_frames",
+    "telemetry_json",
+    "lidar_summary_from_source_telemetry"
+  ],
+  "status": "completed",
+  "frame_count": 3,
+  "used_source_telemetry": true,
+  "source_run": "run_0004",
+  "predict_mode": "simulated_predict_output",
+  "predict_variant": "blur"
+}

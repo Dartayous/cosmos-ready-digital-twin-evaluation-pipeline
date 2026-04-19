@@ -1,0 +1,17 @@
+{
+  "run_id": "run_0002",
+  "timestamp_utc": "2026-04-17T01:00:34.174890+00:00",
+  "project": "project_08_cosmos_integration_demo",
+  "scenario_id": "dim_lighting",
+  "usd_file": "usd/working/warehouse_runtime_p08_v01.usda",
+  "source_project": "project_03_interactive_robotics_twin",
+  "capture_mode": "offline_replay",
+  "sensor_outputs": [
+    "rgb_frames",
+    "telemetry_json",
+    "lidar_summary_placeholder"
+  ],
+  "status": "completed",
+  "frame_count": 3,
+  "variant_name": "dim_lighting"
+}
