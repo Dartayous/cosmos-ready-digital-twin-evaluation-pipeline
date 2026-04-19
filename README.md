@@ -27,6 +27,51 @@ The goal is to prove:
   
 ---
 
+## Visual Results
+
+### Blur Scenario
+![Blur Scenario](images/predict_blur.png)
+
+---
+
+### Dim Lighting Scenario
+![Dim Lighting](images/predict_dim.png)
+
+---
+
+### Noise Scenario
+![Noise Scenario](images/predict_noise.png)
+
+---
+
+### Occlusion Scenario
+![Occlusion Scenario](images/predict_occlusion.png)
+
+---
+
+### Comparison Output
+
+```
+run_0004_predict_blur         | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
+run_0004_predict_dim_lighting | conf: 0.71 | risk: medium | REVIEW | send_to_review_queue
+run_0004_predict_noise        | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
+run_0004_predict_occlusion    | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
+```
+
+---
+
+
+### Interpretation
+
+- baseline run remains strongest
+- degraded conditions reduce confidence
+- all degraded runs are flagged for review
+- no unsafe automatic decisions are made
+
+This mirrors how real perception validation pipelines behave in production systems.
+
+---
+
 ## Why This Project Matters
 
 In real physical AI systems, the challenge is NOT just generating outputs.
@@ -114,51 +159,6 @@ Only the model call is simulated.
 
 These runs simulate degraded perception conditions that would normally be handled by Cosmos Predict.
 
----
-
-## Visual Results
-
-### Blur Scenario
-![Blur Scenario](images/predict_blur.png)
-
----
-
-### Dim Lighting Scenario
-![Dim Lighting](images/predict_dim.png)
-
----
-
-### Noise Scenario
-![Noise Scenario](images/predict_noise.png)
-
----
-
-### Occlusion Scenario
-![Occlusion Scenario](images/predict_occlusion.png)
-
----
-
-### Comparison Output
-
-```
-run_0004_predict_blur         | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
-run_0004_predict_dim_lighting | conf: 0.71 | risk: medium | REVIEW | send_to_review_queue
-run_0004_predict_noise        | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
-run_0004_predict_occlusion    | conf: 0.61 | risk: medium | REVIEW | send_to_review_queue
-```
-
----
-
-
-
-### Interpretation
-
-- baseline run remains strongest
-- degraded conditions reduce confidence
-- all degraded runs are flagged for review
-- no unsafe automatic decisions are made
-
-This mirrors how real perception validation pipelines behave in production systems.
 
 ---
 
