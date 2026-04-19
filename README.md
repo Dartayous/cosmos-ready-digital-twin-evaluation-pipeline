@@ -122,9 +122,6 @@ These runs simulate degraded perception conditions that would normally be handle
 
 ---
 
-
-## Results
-
 ### Comparison Output
 
 ```
