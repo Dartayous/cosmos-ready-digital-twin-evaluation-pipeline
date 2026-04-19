@@ -12,8 +12,8 @@ The goal is NOT to fake Cosmos access.
 
 The goal is to prove:
 - I understand the actual pipeline needed for COSMOS Predict and Reason
-- I could build it correctly
-- I could create a structure this is ready to plug into Cosmos the moment it becomes available
+- I can build it correctly
+- I can create a structure this is ready to plug into Cosmos the moment it becomes available
 
 ---
 
