@@ -15,6 +15,8 @@ The goal is to prove:
 - you built it correctly
 - you are ready to plug into Cosmos the moment it becomes available
 
+---
+
 ## What This Project Demonstrates
 
 - End-to-end digital twin evaluation pipeline design
